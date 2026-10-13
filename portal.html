@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Learning Portal | Ascend Mind Institute</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portal.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav"><a class="brand" href="index.html"><span
+                    class="crest">A</span><span><strong>ASCEND</strong><small>MIND INSTITUTE</small></span></a>
+            <nav><a href="index.html">← Main Website</a><a href="https://wa.me/2348125599549" target="_blank"
+                    rel="noopener">Support</a></nav>
+        </div>
+    </header>
+    <main class="container portal">
+        <div class="portal-heading"><span class="kicker">LEARN • GROW • EXCEL</span>
+            <h1>Learning <em>Portal</em></h1>
+            <p>Lessons, assignments, attendance, progress and billing in one secure workspace.</p>
+        </div>
+        <div id="setup" class="notice" hidden>Platform setup is required. The administrator must configure Supabase in
+            <code>config.js</code> and run <code>schema.sql</code>.</div>
+        <section id="auth" class="panel auth">
+            <div class="tabs"><button type="button" class="active" data-auth="signin">Sign in</button><button
+                    type="button" data-auth="signup">Parent registration</button></div>
+            <form id="authForm"><label>Email<input id="email" type="email" required
+                        autocomplete="email"></label><label>Password<input id="password" type="password" required
+                        minlength="8" autocomplete="current-password"></label><label id="nameLabel" hidden>Parent /
+                    guardian name<input id="fullname" maxlength="100" autocomplete="name"></label><button class="btn"
+                    type="submit" id="authSubmit">Sign in</button><button class="link-button" type="button"
+                    id="reset">Forgot password?</button></form>
+            <p class="hint">Students and tutors receive their accounts through an authorised administrator. Parents may
+                register here. An email verification may be required.</p>
+        </section>
+        <section id="workspace" hidden>
+            <div class="toolbar panel">
+                <div><strong id="welcome"></strong>
+                    <p id="roleLabel"></p>
+                </div><button class="btn outline" id="signout">Sign out</button>
+            </div>
+            <div id="summary" class="summary"></div>
+            <div class="portal-grid">
+                <section class="panel">
+                    <h2>Upcoming lessons</h2>
+                    <div id="lessons"></div>
+                </section>
+                <section class="panel">
+                    <h2>Assignments</h2>
+                    <div id="assignments"></div>
+                </section>
+                <section class="panel">
+                    <h2>Attendance</h2>
+                    <div id="attendance"></div>
+                </section>
+                <section class="panel">
+                    <h2>Progress reports</h2>
+                    <div id="reports"></div>
+                </section>
+                <section class="panel">
+                    <h2>Invoices & payments</h2>
+                    <div id="invoices"></div>
+                </section>
+                <section class="panel" id="management">
+                    <h2>Management</h2>
+                    <div id="manageBody"></div>
+                </section>
+            </div>
+        </section>
+        <p id="feedback" role="status" aria-live="polite"></p>
+    </main>
+    <script src="config.js"></script>
+    <script type="module" src="portal.js"></script>
+</body>
+
+</html>
